@@ -22,17 +22,17 @@ const futreSwapInstance = futreSwap.connect(wallet)
 const main = async () => {
     const daiBalance = await dai.balanceOf(FUTURESWAP_ADDRESS)
     const tokenPools = await futreSwapInstance.tokenPools()
-    // const constants = await futreSwapInstance.constants() //TODO get DSR rewards from contract
+    const constants = await futreSwapInstance.constants() //TODO get DSR rewards from contract
     const stableTokenCollateralPoool = tokenPools.stableTokenCollateralPool
     const amountToAdd = daiBalance.sub(stableTokenCollateralPoool);
-    const DSRadditionReward = 20000000000000000 //constants.DSRadditionReward
+    const isDSR = constants.isDSR
+    const DSRadditionReward = constants.DSRadditionReward //constants.DSRadditionReward
     const reward = (amountToAdd * DSRadditionReward) / 1e18;
-
     const gasCost = 180000 * GAS_PRICE 
     const valueOfEth = await getValueofETH()
     const costOfTx = valueOfEth * gasCost
 
-    if (reward > costOfTx) {
+    if (reward > costOfTx && isDSR) {
         const tx = await futreSwapInstance.addFundsToDSR({
             gasPrice: GAS_PRICE
         })
