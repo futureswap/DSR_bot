@@ -2,13 +2,11 @@ require('dotenv').config()
 const { ethers } = require("ethers");
 const {
   FUTURESWAP_ADDRESS,
-  DAI_ADDRESS,
-  PRIVATE_KEY,
   NETWORK,
   GAS_PRICE,
-  CHAINLINK_ADDRESS,
   RERUNTIME
 } = require("./configurations");
+const { DAI_ADDRESS, CHAINLINK_ADDRESS} = require("./constants")
 const { FUTURESWAP_ABI, DAT_ABI, CHAINLINK_ABI } = require("./ABI")
 const {logger} = require('./logging')
 
