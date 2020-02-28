@@ -8,6 +8,7 @@
 
 ## .env file 
 * a .env file is needed with your private key 
+* recommended to remove after the bot spins up
 ```
 PRIVATE_KEY=<your private key>
 
