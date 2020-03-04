@@ -4,7 +4,7 @@
 * This bot monitors and exchange and sends that transaction
 
 ## requirements 
-* NPM version 6 or greater
+* NPM version 10 or greater
 
 ## .env file 
 * a .env file is needed with your private key 
