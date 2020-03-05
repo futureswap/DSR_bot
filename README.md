@@ -36,3 +36,8 @@ const RERUNTIME = 180000
 $ npm install 
 $ npm run start
 ```
+* logs get written to log.txt and errors to errors.txt 
+* to have a continuous view run 
+```
+$ tail -f log.txt
+``` 
