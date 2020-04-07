@@ -1,4 +1,4 @@
-# DSR bot 
+# DAI-See bot 
 * When an exchange is using the Dai Savings Rate there are certain edge cases where funds will end up in the contract but not get moved to the DSR
 * These edgecases were rare enough that we created a function that will check to see if there is a balance that needs to go into the DSR and if it does it will move the funds and reward the caller proportionally to the size of the amount moved up to a maximum of 10 DAI
 * This bot monitors and exchange and sends that transaction
